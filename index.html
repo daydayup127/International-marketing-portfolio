@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Day Dai — international education, digital content and marketing portfolio." />
+  <meta name="theme-color" content="#10152d" />
+  <title>Day Dai | Content, Education & Digital Marketing</title>
+  <style>
+    :root {
+      --ink: #18213c;
+      --muted: #596681;
+      --white: #fff;
+      --line: rgba(255,255,255,.62);
+      --glass: rgba(248,250,255,.82);
+      --glass-strong: rgba(255,255,255,.91);
+      --violet: #7663bd;
+      --blue: #477db4;
+      --teal: #4b9caa;
+      --shadow: 0 24px 70px rgba(5,13,39,.22);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #10152d url("nebula-bg.png") center center / cover fixed no-repeat;
+      line-height: 1.6;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: linear-gradient(135deg, rgba(8,16,43,.64), rgba(30,28,75,.22) 48%, rgba(8,17,46,.58));
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20; backdrop-filter: blur(18px);
+      background: rgba(9,16,43,.36); border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    .nav { display:flex; align-items:center; justify-content:space-between; min-height:72px; color:#fff; }
+    .brand { font-size: 1.2rem; font-weight: 720; letter-spacing: -.04em; text-decoration:none; }
+    .brand span { color:#b9c8ff; font-weight:400; }
+    .navlinks { display:flex; gap:28px; align-items:center; }
+    .navlinks a { color:rgba(255,255,255,.88); text-decoration:none; font-size:.88rem; letter-spacing:.04em; }
+    .navlinks a:hover { color:#fff; }
+    .menu { display:none; border:1px solid rgba(255,255,255,.3); color:white; padding:8px 12px; border-radius:30px; background:rgba(255,255,255,.1); }
+    .hero { min-height: 690px; display:flex; align-items:center; padding:90px 0 105px; }
+    .hero-panel {
+      width:min(850px,100%); padding:clamp(30px,6vw,70px); border:1px solid rgba(255,255,255,.45);
+      border-radius:30px; background:linear-gradient(135deg, rgba(255,255,255,.16), rgba(255,255,255,.06));
+      backdrop-filter:blur(9px); box-shadow:0 25px 85px rgba(0,0,0,.18); color:white;
+    }
+    .eyebrow { text-transform:uppercase; letter-spacing:.22em; font-size:.73rem; font-weight:650; color:#d8e2ff; }
+    h1 { font-size:clamp(3.5rem,9vw,7.2rem); line-height:.98; letter-spacing:-.075em; margin:20px 0 18px; font-weight:650; }
+    .hero-role { color:#e0e7ff; font-size:clamp(1rem,2vw,1.22rem); letter-spacing:.02em; }
+    .quote { margin:52px 0 26px; max-width:780px; font-family:Georgia, "Times New Roman", serif; font-weight:400; font-size:clamp(1.55rem,3.3vw,2.65rem); line-height:1.26; letter-spacing:-.025em; }
+    .quote em { color:#d9d1ff; font-style:italic; }
+    .intro { max-width:590px; margin:0; color:rgba(255,255,255,.84); font-size:1.02rem; }
+    .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:13px; margin-top:31px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 20px; border-radius:999px; text-decoration:none; font-weight:650; font-size:.9rem; transition:transform .2s ease, background .2s ease; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-light { background:#fff; color:#253458; }
+    .btn-ghost { border:1px solid rgba(255,255,255,.55); color:#fff; background:rgba(255,255,255,.08); }
+    .section { padding: 35px 0 78px; scroll-margin-top:84px; }
+    .section-shell {
+      padding:clamp(25px,4vw,48px); border:1px solid rgba(255,255,255,.68); border-radius:30px;
+      background:var(--glass); backdrop-filter:blur(18px); box-shadow:var(--shadow);
+    }
+    .section-kicker { color:#66749a; text-transform:uppercase; letter-spacing:.19em; font-size:.72rem; font-weight:750; }
+    h2 { font-size:clamp(2rem,4vw,3.2rem); letter-spacing:-.055em; line-height:1.1; margin:8px 0 12px; color:#192542; }
+    .section-lead { color:#596783; max-width:680px; margin:0 0 30px; }
+    .platform-label { display:flex; align-items:center; gap:12px; margin:31px 0 14px; }
+    .platform-label h3 { margin:0; font-size:1.05rem; color:#263454; }
+    .platform-label span { color:#7c88a2; font-size:.82rem; }
+    .platform-label::after { content:""; height:1px; flex:1; background:linear-gradient(90deg,rgba(98,112,156,.32),transparent); }
+    .works-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }
+    .work-card { overflow:hidden; border-radius:19px; background:rgba(255,255,255,.85); border:1px solid rgba(113,129,170,.2); box-shadow:0 10px 30px rgba(38,52,93,.08); transition:transform .22s ease, box-shadow .22s ease; }
+    .work-card:hover { transform:translateY(-4px); box-shadow:0 18px 38px rgba(38,52,93,.14); }
+    .cover { min-height:174px; padding:18px; position:relative; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; color:white; isolation:isolate; }
+    .cover::before,.cover::after { content:""; position:absolute; z-index:-1; border-radius:50%; filter:blur(2px); }
+    .cover::before { width:230px;height:230px;right:-70px;top:-100px;background:radial-gradient(circle,rgba(255,255,255,.65),rgba(255,255,255,0) 68%); }
+    .cover::after { width:260px;height:150px;left:-75px;bottom:-95px;background:radial-gradient(ellipse,rgba(15,231,232,.42),rgba(15,231,232,0) 70%); }
+    .cover .platform { align-self:flex-start; padding:5px 10px; border:1px solid rgba(255,255,255,.52); background:rgba(12,20,57,.2); backdrop-filter:blur(10px); border-radius:30px; font-size:.68rem; letter-spacing:.07em; text-transform:uppercase; }
+    .cover strong { display:block; font-family:Georgia,serif; font-size:1.45rem; line-height:1.1; max-width:90%; text-shadow:0 2px 14px rgba(0,0,0,.18); }
+    .cover small { opacity:.86; font-size:.75rem; }
+    .c1 { background:linear-gradient(135deg,#19275a,#6374bc 58%,#b7a3db); }
+    .c2 { background:linear-gradient(135deg,#142b55,#397f9c 58%,#9ac9d5); }
+    .c3 { background:linear-gradient(135deg,#35235b,#8169b6 55%,#d2a8dc); }
+    .c4 { background:linear-gradient(135deg,#16294b,#527ab2 55%,#a2b5e0); }
+    .c5 { background:linear-gradient(135deg,#27365f,#9a78a9 60%,#e0b9ca); }
+    .c6 { background:linear-gradient(135deg,#153c59,#4b8da0 55%,#b2d6cf); }
+    .c7 { background:linear-gradient(135deg,#30244d,#5d63a6 55%,#c0a3d2); }
+    .work-copy { padding:18px 18px 17px; }
+    .work-copy h4 { margin:0 0 7px; color:#202d4c; font-size:1rem; line-height:1.3; }
+    .work-copy p { margin:0 0 15px; color:#63708b; font-size:.84rem; line-height:1.55; min-height:65px; }
+    .work-link { color:#516eae; font-size:.82rem; font-weight:750; text-decoration:none; }
+    .work-link:hover { text-decoration:underline; }
+    .results-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin:28px 0 28px; }
+    .metric { padding:23px; border-radius:18px; background:linear-gradient(145deg,rgba(255,255,255,.95),rgba(235,240,255,.78)); border:1px solid rgba(118,132,176,.2); }
+    .metric strong { display:block; color:#3b4a83; font-size:clamp(1.8rem,4vw,2.5rem); letter-spacing:-.06em; line-height:1; }
+    .metric span { display:block; margin-top:9px; color:#334160; font-weight:700; font-size:.88rem; }
+    .metric small { color:#78839a; font-size:.76rem; }
+    .result-detail { display:grid; grid-template-columns:1.1fr .9fr; gap:18px; }
+    .detail-card { border-radius:19px; padding:22px; background:rgba(255,255,255,.76); border:1px solid rgba(118,132,176,.2); }
+    .detail-card h3 { margin:0 0 13px; font-size:1.02rem; color:#263454; }
+    .bilingual { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .bilingual p { margin:0; color:#62708b; font-size:.88rem; }
+    .bilingual b { color:#263454; }
+    .note { margin:18px 0 0; padding:14px 16px; border-left:3px solid #8b83cc; background:rgba(237,239,255,.7); color:#5e6a87; font-size:.82rem; border-radius:0 10px 10px 0; }
+    .footer { color:rgba(255,255,255,.82); text-align:center; padding:10px 0 44px; font-size:.82rem; }
+    .footer a { color:#fff; }
+    @media(max-width:850px) { .works-grid { grid-template-columns:repeat(2,1fr); } .result-detail { grid-template-columns:1fr; } }
+    @media(max-width:620px) {
+      .wrap { width:min(100% - 24px, 1120px); }
+      .nav { min-height:62px; }
+      .navlinks { gap:13px; }
+      .navlinks a { font-size:.75rem; }
+      .hero { min-height:620px; padding:65px 0 75px; }
+      .hero-panel { border-radius:23px; padding:28px 22px; }
+      .quote { margin:38px 0 20px; }
+      .section { padding:18px 0 48px; }
+      .section-shell { border-radius:23px; padding:23px 17px; }
+      .works-grid { grid-template-columns:1fr; }
+      .cover { min-height:160px; }
+      .work-copy p { min-height:0; }
+      .results-grid { grid-template-columns:1fr; }
+      .bilingual { grid-template-columns:1fr; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top">DAY <span>DAI</span></a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#works">Portfolio</a>
+        <a href="#results">Results</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap" id="about">
+      <div class="hero-panel">
+        <div class="eyebrow">Education · Content · Digital Marketing</div>
+        <h1>Day Dai</h1>
+        <div class="hero-role">Educator · Content Creator · International Marketing</div>
+        <div class="quote">“Shoot for the moon.<br><em>Even if you miss, you'll land among the stars.</em>”</div>
+        <p class="intro">I bring together education, storytelling and digital content to turn ideas into meaningful connections. My work spans education marketing, content strategy, video production and audience development.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="#works">Explore my work <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" href="#results">View results</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="works">
+      <div class="section-shell">
+        <div class="section-kicker">02 / Selected work</div>
+        <h2>Stories made to connect.</h2>
+        <p class="section-lead">A selection of video and editorial work across Chinese social platforms. Each project includes a short English introduction and a link to the original publication.</p>
+
+        <div class="platform-label"><h3>WeChat Channels</h3><span>Short-form video</span></div>
+        <div class="works-grid">
+          <article class="work-card">
+            <div class="cover c1"><span class="platform">WeChat Channels</span><div><strong>Interview-led<br>commentary</strong><small>Turning an interview into a story</small></div></div>
+            <div class="work-copy"><h4>From Interview to Video Commentary</h4><p>Reframing an interview into a presenter-led video, bringing key ideas to a wider audience through a clear and engaging narrative.</p><a class="work-link" href="https://weixin.qq.com/sph/A21lLNf0Cg" target="_blank" rel="noopener">Watch original video ↗</a></div>
+          </article>
+          <article class="work-card">
+            <div class="cover c2"><span class="platform">WeChat Channels</span><div><strong>Walk &<br>talk</strong><small>Opinion-led storytelling</small></div></div>
+            <div class="work-copy"><h4>A Point of View on the Move</h4><p>A conversational, walk-and-talk format that shares a personal perspective in a natural and direct way.</p><a class="work-link" href="https://weixin.qq.com/sph/A7I13nmvWO" target="_blank" rel="noopener">Watch original video ↗</a></div>
+          </article>
+          <article class="work-card">
+            <div class="cover c3"><span class="platform">WeChat Channels</span><div><strong>News-style<br>reporting</strong><small>Information made accessible</small></div></div>
+            <div class="work-copy"><h4>News-style Video Report</h4><p>Presenting a news-related topic in a concise, accessible format with a presenter-led reporting style.</p><a class="work-link" href="https://weixin.qq.com/sph/AlNgUxz5HV" target="_blank" rel="noopener">Watch original video ↗</a></div>
+          </article>
+          <article class="work-card">
+            <div class="cover c4"><span class="platform">WeChat Channels</span><div><strong>The power of<br>an information gap</strong><small>Curiosity as a storytelling hook</small></div></div>
+            <div class="work-copy"><h4>Curiosity-driven Content</h4><p>Using an unexpected or surprising piece of information to spark curiosity and make an idea more memorable.</p><a class="work-link" href="https://weixin.qq.com/sph/ANul1vm4Ue" target="_blank" rel="noopener">Watch original video ↗</a></div>
+          </article>
+        </div>
+
+        <div class="platform-label"><h3>WeChat Official Account</h3><span>Editorial content</span></div>
+        <div class="works-grid">
+          <article class="work-card">
+            <div class="cover c5"><span class="platform">WeChat Official Account</span><div><strong>Education<br>in practice</strong><small>Useful ideas for parents & educators</small></div></div>
+            <div class="work-copy"><h4>Practical Insights into Education Methods</h4><p>An educational article sharing practical approaches and useful ideas for parents and educators.</p><a class="work-link" href="https://mp.weixin.qq.com/s/7spDWZRSAiFw7Bw2iEeBJw" target="_blank" rel="noopener">Read original article ↗</a></div>
+          </article>
+        </div>
+
+        <div class="platform-label"><h3>REDnote</h3><span>Video · Practical guide</span></div>
+        <div class="works-grid">
+          <article class="work-card">
+            <div class="cover c6"><span class="platform">REDnote / Xiaohongshu</span><div><strong>Starting a new<br>chapter in NZ</strong><small>First-hand experience & practical tips</small></div></div>
+            <div class="work-copy"><h4>How I Settled in New Zealand</h4><p>A first-hand guide to settling in New Zealand, sharing practical advice, personal experience and common pitfalls to avoid.</p><a class="work-link" href="https://xhslink.cn/o/7RdtpSISF7s" target="_blank" rel="noopener">Open original note ↗</a></div>
+          </article>
+        </div>
+
+        <div class="platform-label"><h3>Douyin</h3><span>Short-form video</span></div>
+        <div class="works-grid">
+          <article class="work-card">
+            <div class="cover c7"><span class="platform">Douyin</span><div><strong>Welcome to<br>New Zealand</strong><small>A different way of life</small></div></div>
+            <div class="work-copy"><h4>Welcome to New Zealand</h4><p>A welcome-style promotional video introducing New Zealand and inviting viewers to discover a different way of life.</p><a class="work-link" href="https://v.douyin.com/0NR-1_YukSw/" target="_blank" rel="noopener">Watch original video ↗</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="results">
+      <div class="section-shell">
+        <div class="section-kicker">03 / Performance & audience insights</div>
+        <h2>Behind the numbers.</h2>
+        <p class="section-lead">Selected results from my education content and livestream work. Figures below are limited to results I can substantiate; original dashboard screenshots and further audience analysis can be added here.</p>
+        <div class="results-grid">
+          <div class="metric"><strong>330K+</strong><span>Organic followers</span><small>WeChat Channels audience growth</small></div>
+          <div class="metric"><strong>2,000+</strong><span>Paying customers</span><small>Across education courses and products</small></div>
+          <div class="metric"><strong>293</strong><span>Buyers in one livestream</span><small>One event · RMB 288 per purchase</small></div>
+        </div>
+        <div class="result-detail">
+          <div class="detail-card">
+            <h3>One livestream · Performance snapshot</h3>
+            <div class="bilingual">
+              <p><b>Gross sales</b><br>RMB 84,384<br><span>293 buyers × RMB 288</span></p>
+              <p><b>直播销售额</b><br>人民币 84,384 元<br><span>293 位购买者 × 每单 288 元</span></p>
+            </div>
+            <p class="note">This is gross sales from one livestream, not profit or total business revenue. Original livestream dashboard screenshots will be added after the figures and labels are checked.</p>
+          </div>
+          <div class="detail-card">
+            <h3>Audience & content insights / 受众与内容分析</h3>
+            <div class="bilingual">
+              <p><b>Content themes</b><br>Education, current affairs, critical thinking and practical guidance.</p>
+              <p><b>内容主题</b><br>教育、时事热点、批判性思维与实用信息。</p>
+              <p><b>Audience focus</b><br>Chinese-speaking audiences interested in education, learning and life decisions.</p>
+              <p><b>受众关注点</b><br>关注教育、学习与人生选择的中文受众。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">DAY DAI · Education · Content · Digital Marketing</footer>
+</body>
+</html>
