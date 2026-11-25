@@ -128,6 +128,15 @@
       .bilingual { grid-template-columns:1fr; }
     }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition:none !important; } }
+    .evidence-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+    .evidence { margin:0; overflow:hidden; border-radius:19px; background:rgba(255,255,255,.85); border:1px solid rgba(113,129,170,.2); }
+    .evidence img { display:block; width:100%; height:260px; object-fit:contain; background:#f4f5fa; }
+    .evidence figcaption { padding:16px; color:#334160; font-size:.88rem; }
+    .evidence small { color:#516eae; }
+    .request { cursor:pointer; color:#516eae; font-weight:750; padding:10px 0; }
+    .private-info { margin-top:12px; padding:22px; border-radius:18px; background:linear-gradient(135deg,#263454,#454575); color:#fff; }
+    .private-info h3 { color:#fff; }
+    @media(max-width:620px) { .evidence-grid { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
@@ -181,6 +190,10 @@
             <div class="cover c4"><span class="platform">WeChat Channels</span><div><strong>The power of<br>an information gap</strong><small>Curiosity as a storytelling hook</small></div></div>
             <div class="work-copy"><h4>Curiosity-driven Content</h4><p>Using an unexpected or surprising piece of information to spark curiosity and make an idea more memorable.</p><a class="work-link" href="https://weixin.qq.com/sph/ANul1vm4Ue" target="_blank" rel="noopener">Watch original video ↗</a></div>
           </article>
+          <article class="work-card">
+            <div class="cover c2"><span class="platform">WeChat Channels</span><div><strong>Fresh information,<br>new perspectives</strong><small>Information-gap storytelling</small></div></div>
+            <div class="work-copy"><h4>Fresh Information, New Perspectives</h4><p>A presenter-led video that uses an information gap to spark curiosity, introduce new information and offer a fresh perspective.</p><a class="work-link" href="https://weixin.qq.com/sph/A9wkfIjZST" target="_blank" rel="noopener">Watch original video ↗</a></div>
+          </article>
         </div>
 
         <div class="platform-label"><h3>WeChat Official Account</h3><span>Editorial content</span></div>
@@ -188,6 +201,10 @@
           <article class="work-card">
             <div class="cover c5"><span class="platform">WeChat Official Account</span><div><strong>Education<br>in practice</strong><small>Useful ideas for parents & educators</small></div></div>
             <div class="work-copy"><h4>Practical Insights into Education Methods</h4><p>An educational article sharing practical approaches and useful ideas for parents and educators.</p><a class="work-link" href="https://mp.weixin.qq.com/s/7spDWZRSAiFw7Bw2iEeBJw" target="_blank" rel="noopener">Read original article ↗</a></div>
+          </article>
+          <article class="work-card">
+            <div class="cover c5"><span class="platform">WeChat Official Account</span><div><strong>Opinion &<br>commentary</strong><small>Independent analysis</small></div></div>
+            <div class="work-copy"><h4>Opinion & Commentary</h4><p>A response to an existing opinion piece, offering independent analysis and a different perspective on the issues discussed.</p><a class="work-link" href="https://mp.weixin.qq.com/s/5lPr_0NT0XZOvzCC8dSToQ" target="_blank" rel="noopener">Read original article ↗</a></div>
           </article>
         </div>
 
@@ -213,30 +230,18 @@
       <div class="section-shell">
         <div class="section-kicker">03 / Performance & audience insights</div>
         <h2>Behind the numbers.</h2>
-        <p class="section-lead">Selected results from my education content and livestream work. Figures below are limited to results I can substantiate; original dashboard screenshots and further audience analysis can be added here.</p>
-        <div class="results-grid">
-          <div class="metric"><strong>330K+</strong><span>Organic followers</span><small>WeChat Channels audience growth</small></div>
+        <p class="section-lead">Selected audience growth, customer reach and audience insights from my education content work.</p>
+        <div class="results-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+          <div class="metric"><strong>330K+</strong><span>Organic followers</span><small>WeChat Channels · No paid promotion</small></div>
           <div class="metric"><strong>2,000+</strong><span>Paying customers</span><small>Across education courses and products</small></div>
-          <div class="metric"><strong>293</strong><span>Buyers in one livestream</span><small>One event · RMB 288 per purchase</small></div>
         </div>
-        <div class="result-detail">
-          <div class="detail-card">
-            <h3>One livestream · Performance snapshot</h3>
-            <div class="bilingual">
-              <p><b>Gross sales</b><br>RMB 84,384<br><span>293 buyers × RMB 288</span></p>
-              <p><b>直播销售额</b><br>人民币 84,384 元<br><span>293 位购买者 × 每单 288 元</span></p>
-            </div>
-            <p class="note">This is gross sales from one livestream, not profit or total business revenue. Original livestream dashboard screenshots will be added after the figures and labels are checked.</p>
-          </div>
-          <div class="detail-card">
-            <h3>Audience & content insights / 受众与内容分析</h3>
-            <div class="bilingual">
-              <p><b>Content themes</b><br>Education, current affairs, critical thinking and practical guidance.</p>
-              <p><b>内容主题</b><br>教育、时事热点、批判性思维与实用信息。</p>
-              <p><b>Audience focus</b><br>Chinese-speaking audiences interested in education, learning and life decisions.</p>
-              <p><b>受众关注点</b><br>关注教育、学习与人生选择的中文受众。</p>
-            </div>
-          </div>
+        <div class="platform-label"><h3>Account & audience insights</h3><span>Original screenshots</span></div>
+        <div class="evidence-grid"><figure class="evidence"><a href="WeChat%20Channel%20profile%20overview.jpg" target="_blank" rel="noopener"><img src="WeChat%20Channel%20profile%20overview.jpg" alt="WeChat Channels Profile Overview" loading="lazy"></a><figcaption><b>WeChat Channels Profile Overview</b><br>视频号账号概览<br><small>Click to enlarge ↗</small></figcaption></figure><figure class="evidence"><a href="Audience%20Demographics_Age.jpg" target="_blank" rel="noopener"><img src="Audience%20Demographics_Age.jpg" alt="Audience Age Distribution" loading="lazy"></a><figcaption><b>Audience Age Distribution</b><br>受众年龄分布<br><small>Click to enlarge ↗</small></figcaption></figure><figure class="evidence"><a href="Audience%20Demographics_gender.jpg" target="_blank" rel="noopener"><img src="Audience%20Demographics_gender.jpg" alt="Audience Gender Distribution" loading="lazy"></a><figcaption><b>Audience Gender Distribution</b><br>受众性别分布<br><small>Click to enlarge ↗</small></figcaption></figure><figure class="evidence"><a href="Audience%20Geography.jpg" target="_blank" rel="noopener"><img src="Audience%20Geography.jpg" alt="Audience Geography" loading="lazy"></a><figcaption><b>Audience Geography</b><br>受众地域分布<br><small>Click to enlarge ↗</small></figcaption></figure></div>
+        <div class="detail-card" style="margin-top:22px">
+          <h3>Livestream &amp; Sales Performance</h3>
+          <details><summary class="request">Request to View Results ↗</summary>
+            <div class="private-info"><h3>Confidential Business Data</h3><p>As my livestream sales data contains commercially sensitive information, including product details and sales figures, it is not publicly available.</p><p>I would be happy to walk you through the original dashboard data in person upon request.</p><p>Please contact me using the contact details provided in my application.</p></div>
+          </details>
         </div>
       </div>
     </section>
